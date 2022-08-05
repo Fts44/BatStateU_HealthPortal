@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #001a1a;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.side {
+    background: url(../images/bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.side img {
+    width: 35%;
+    max-width: 35%;
+}
+
+.registration-container {
+    padding-top: 30px;
+    max-width: 95%;
+    min-width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.separator {
+    width: 150px;
+    height: 4px;
+    background-color: #5a5c69;
+    margin-bottom: 10px;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 18px;
+    color: #696969;
+}
+
+.registration-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-container .registration-form .form-control {
+    height: auto;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    border: none;
+    background-color: transparent;
+    justify-content: space-around;
+}
+
+.registration-container .registration-form .form-control .field {
+    height: 35px;
+}
+
+input ~ .showpassword {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    transition: color   0.4s;
+    cursor: pointer;
+}
+
+a.forgotPassword{
+    float: right;
+    margin-right: 12px;
+}
+
+button.submit {
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 50px;
+    margin: 5px auto;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-color: #5a5c69;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+button.submit:hover {
+    opacity: 0.9;
+}
+
+button:disabled,
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+#btn_otp{
+    width: 100%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #5a5c69;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+i.lbl_loading, #btn_otp_lbl{
+    color: #fff;
+}
+
+.reCaptcha {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block; 
+}
+
+i.lbl_loading {
+    animation: an1 1s ease infinite;
+    height: 14px;
+    width: 14px;
+}
+
+@keyframes an1 {
+    0% {
+        transform: rotate(0turn);
+    }
+    
+    100% {
+        transform: rotate(1turn);
+    }
+}
+/* ----  Responsiveness   ----  */
+@media (max-width: 780px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background: url(../images/bsu_bg.png) no-repeat;*/
+    }
+
+    .side {
+        display: none;
+    }
+
+    section {
+        background-color: #fff;
+        max-height: 95vh;
+        max-width: 100vw;
+    }
+}
