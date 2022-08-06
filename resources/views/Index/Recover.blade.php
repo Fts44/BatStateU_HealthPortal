@@ -1,4 +1,4 @@
-@extends('Layout.Index')
+@extends('layout.index')
 
 @push('title')
     <title>Recover</title>

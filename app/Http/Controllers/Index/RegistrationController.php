@@ -17,7 +17,7 @@ class RegistrationController extends Controller
 {
     public function index(){
 
-        return view('Index.Registration');
+        return view('index.registration');
     }
 
     public function register(Request $request){

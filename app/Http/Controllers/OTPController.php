@@ -47,7 +47,7 @@ class OTPController extends Controller
 
             if(str_contains($request->email,'@g.batstate-u.edu.ph')){
                 $rules = [
-                    'email' => ['required','exists:accounts,gsuite_email'],     
+                    'email' => ['required','email','exists:accounts,gsuite_email'],     
                 ];
                 $message = [
                     'email.exists' => 'Gsuite email is not registered.'
@@ -55,7 +55,7 @@ class OTPController extends Controller
             }   
             else{
                 $rules = [
-                    'email' => ['required','exists:accounts,email'],     
+                    'email' => ['required','email','exists:accounts,email'],     
                 ];
                 $message = [
                     'email.exists' => 'Email is not registered.'

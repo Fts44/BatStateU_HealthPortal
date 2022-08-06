@@ -17,7 +17,7 @@ use App\Rules\PasswordRule;
 class RecoverController extends Controller
 {
     public function index(){
-        return view('Index.Recover');
+        return view('index.recover');
     }
 
     public function recover(Request $request){

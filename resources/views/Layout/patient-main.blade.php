@@ -31,8 +31,8 @@
 </head>
 <body>
 
-    <x-patient_headbar_component></x-patient_headbar_component>
-    <x-patient_sidebar_component></x-patient_sidebar_component>
+    <x-header></x-header>
+    <x-patient-sidebar></x-patient-sidebar>
     
     @yield('content')
 

@@ -35,7 +35,7 @@ class LoginController extends Controller
 
             if($user){
                 if(Hash::check($request->pass, $user->password)){
-                    $request->session()->put('user_id', $user->id);
+                    $request->session()->put('user_id', $user->acc_id);
                     $request->session()->put('user_type', $user->position);
                     return redirect($user->position);
                 }
