@@ -17,6 +17,7 @@ class CreateProgramTable extends Migration
             $table->id('prog_id');
             $table->string('prog_code', 50);
             $table->string('prog_name', 255);
+            $table->string('dept_id', 50);
         });
     }
 

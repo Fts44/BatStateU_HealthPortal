@@ -56,6 +56,7 @@ Route::prefix('patient')->group(function(){
         Route::get('',[PatientMedicalDocumentsController::class, 'index'])->name('PatientMedicalDocuments');
         Route::post('upload/{id}',[PatientMedicalDocumentsController::class, 'upload'])->name('PatientUploadDocuments');
         Route::get('delete/{id}',[PatientMedicalDocumentsController::class, 'delete'])->name('PatientDeleteDocuments');
+        Route::get('view/{pd_id}',[PatientMedicalDocumentsController::class, 'view'])->name('PatientViewDocument');
     });
 
     Route::prefix('appoinment')->group(function(){

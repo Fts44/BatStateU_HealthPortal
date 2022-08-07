@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MedicalDocumentsController extends Controller
 {
@@ -69,8 +70,10 @@ class MedicalDocumentsController extends Controller
     }
 
     public function delete(Request $request, $pd_id){
-
+        $pd_details = DB::table('patient_documents')->first();
         DB::table('patient_documents')->where('pd_id', $pd_id)->delete();
+        $path = '/public/documents/'.$pd_details->dt_id;
+        Storage::delete($path.$pd_details->filename);
 
         $response = [
             'title' => 'Succes!',
@@ -80,5 +83,18 @@ class MedicalDocumentsController extends Controller
         ];
         $response = json_encode($response);
         return redirect()->back()->with('status',$response);
+    }
+
+    public function view($pd_id){
+
+
+        $doc_details = DB::table('patient_documents')->where('pd_id',$pd_id)->first();
+
+        if(str_contains($doc_details->filename,'.pdf')){
+            return view('ViewPDF', compact('doc_details'));
+        }
+        else{
+            return view('ViewImage', compact('doc_details'));
+        }
     }
 }

@@ -45,13 +45,16 @@
                                     <td>{{ date_format(date_create($docs->date), 'M d, Y g:i a') }}</td>
                                     <td>{{ ($docs->verified==0) ? 'Not verified' : 'Verified' }}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="#"><i class="bi bi-eye"></i></a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('PatientViewDocument',['pd_id' => $docs->pd_id]) }}" target="_blank"><i class="bi bi-eye"></i></a>
                                         <a class="btn btn-danger btn-sm" href="{{ route('PatientDeleteDocuments', ['id'=> $docs->pd_id]) }}"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach 
                         </tbody>
                     </table>
+
+
+                    </iframe>
                 </div>
             </div>
         </div>
