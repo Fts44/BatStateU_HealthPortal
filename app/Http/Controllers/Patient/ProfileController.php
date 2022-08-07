@@ -25,7 +25,7 @@ class ProfileController extends Controller
         ->select('acc.*',
         'ec.first_name AS ec_first_name','ec.middle_name AS ec_middle_name','ec.last_name AS ec_last_name','ec.suffix_name AS ec_suffix_name',
         'ec.relation_to_patient as ec_rtp', 'ec.landline AS ec_landline', 'ec.contact AS ec_contact', 'ec.biz_add_id AS ec_biz_add_id',
-        'fd.father_fn AS fd_father_fn', 'fd.health_history AS fd_health_history'
+        'fd.father_fn AS fd_father_fn'
         )
         ->where('acc_id',Session('user_id'))->first();
 
@@ -161,7 +161,11 @@ class ProfileController extends Controller
                     'status' => 200
                 ];
                 $response = json_encode($response, true);
-                return redirect()->back()->with('status',$response);
+                return redirect()->back()->with('status',$response)
+                    ->withErrors([
+                        'otp' => 'Invalid otp!'
+                    ])
+                    ->withInput($request->all());
             }
             else if($otp_status && $request->gsuite_email != null && $request->otp != null){
                 DB::table('accounts')->where('acc_id', $id)->update([

@@ -18,15 +18,15 @@ class CreateFamilyDetailsTable extends Migration
             $table->string('father_fn');
             $table->string('father_mn');
             $table->string('father_ln');
-            $table->string('father_sn');
+            $table->string('father_sn')->nullable();
             $table->string('father_occupation');
             $table->string('mother_fn');
             $table->string('mother_mn');
             $table->string('mother_ln');
-            $table->string('mother_sn');
+            $table->string('mother_sn')->nullable();
             $table->string('mother_occupation');
             $table->string('marital_status');
-            $table->json('health_history');
+            $table->string('fhh_id')->nullable();
         });
     }
 

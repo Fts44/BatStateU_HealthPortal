@@ -7,7 +7,7 @@
 @section('content')
 <main id="main" class="main">
 
-    <div class="pagetitle">
+    <div class="pagetitle mb-3">
         <h1>Personal Info</h1>
     </div>
     <!-- End Page Title -->

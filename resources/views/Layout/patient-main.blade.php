@@ -24,7 +24,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
     <!-- sweet alert modal -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="{{ url('js/swal.js') }}"></script>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <!-- main css -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @stack('css')

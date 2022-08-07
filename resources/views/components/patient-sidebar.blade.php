@@ -34,10 +34,23 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('patient/') }}" id="sidebar_dashboard">
+            <a class="nav-link collapsed" href="#" id="sidebar_user_information"  data-bs-target="#user-nav" data-bs-toggle="collapse" >
                 <i class="bi bi-person"></i>
-                <span>Personal Info</span>
+                <span>User Information</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
             </a>
+            <ul id="user-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{{ route('PatientProfile') }}">
+                        <i class="bi bi-circle"></i><span>Personal Info</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('PatientFamilyDetails') }}">
+                        <i class="bi bi-circle"></i><span>Family Details</span>
+                    </a>
+                </li>
+            </ul>
         </li>
     </li>
 

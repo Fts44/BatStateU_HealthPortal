@@ -11,6 +11,7 @@ use App\Http\Controllers\Index\RegistrationController as Registration;
 use App\Http\Controllers\Index\RecoverController as Recover;
 
 use App\Http\Controllers\Patient\ProfileController as PatientProfileController;
+use App\Http\Controllers\Patient\FamilyDetailsController as PatientFamilyDetailsController;
 
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
@@ -45,7 +46,10 @@ Route::prefix('patient')->group(function(){
         Route::post('update/password/{id}',[PatientProfileController::class,'update_password'])->name('UpdatePatientPassword');
     });
 
-    
+    Route::prefix('familydetails')->group(function(){
+        Route::get('',[PatientFamilyDetailsController::class, 'index'])->name('PatientFamilyDetails');
+        Route::post('update/{id}',[PatientFamilyDetailsController::class, 'update'])->name('UpdatePatientFamilyDetails');
+    });
 
     Route::prefix('document')->group(function(){
         
