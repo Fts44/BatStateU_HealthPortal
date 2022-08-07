@@ -12,6 +12,7 @@ use App\Http\Controllers\Index\RecoverController as Recover;
 
 use App\Http\Controllers\Patient\ProfileController as PatientProfileController;
 use App\Http\Controllers\Patient\FamilyDetailsController as PatientFamilyDetailsController;
+use App\Http\Controllers\Patient\MedicalDocumentsController as PatientMedicalDocumentsController;
 
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
@@ -52,7 +53,9 @@ Route::prefix('patient')->group(function(){
     });
 
     Route::prefix('document')->group(function(){
-        
+        Route::get('',[PatientMedicalDocumentsController::class, 'index'])->name('PatientMedicalDocuments');
+        Route::post('upload/{id}',[PatientMedicalDocumentsController::class, 'upload'])->name('PatientUploadDocuments');
+        Route::get('delete/{id}',[PatientMedicalDocumentsController::class, 'delete'])->name('PatientDeleteDocuments');
     });
 
     Route::prefix('appoinment')->group(function(){

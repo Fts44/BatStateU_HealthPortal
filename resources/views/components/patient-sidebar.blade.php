@@ -27,9 +27,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('patient/documents') }}" id="sidebar_dashboard">
+            <a class="nav-link collapsed" href="{{ route('PatientMedicalDocuments') }}" id="sidebar_dashboard">
                 <i class="bi bi-filetype-doc"></i>
-                <span>Medical Documents</span>
+                <span>Documents</span>
             </a>
         </li>
 
