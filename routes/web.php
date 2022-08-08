@@ -14,6 +14,8 @@ use App\Http\Controllers\Patient\ProfileController as PatientProfileController;
 use App\Http\Controllers\Patient\FamilyDetailsController as PatientFamilyDetailsController;
 use App\Http\Controllers\Patient\MedicalDocumentsController as PatientMedicalDocumentsController;
 
+use App\Http\Controllers\Admin\AdminPatientController as AdminPatientController;
+
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
 
@@ -67,6 +69,20 @@ Route::prefix('patient')->group(function(){
 
     });
 
+});
+
+Route::prefix('admin')->group(function(){
+
+    Route::prefix('')->group(function(){
+        Route::get('',[AdminPatientController::class, 'index'])->name('AdminPatient');
+        Route::get('patient/{id}',[AdminPatientController::class, 'show'])->name('ViewAdminPatientDetails');
+        Route::get('patient/updateverfication/{id}/{vstatus}',[AdminPatientController::class, 'update_verification'])->name('UpdateAdminPatientVerification');
+    });
+
+    Route::prefix('personnel')->group(function(){
+        Route::get('',[AdminPatientController::class, 'index'])->name('AdminPersonnel');
+
+    });
 });
 
 

@@ -34,7 +34,16 @@ class FamilyDetailsController extends Controller
                 'mother_ln' => null,
                 'mother_sn' => null,
                 'mother_occupation' => null,
-                'marital_status' => null
+                'marital_status' => null,
+                'diabetes' => null,
+                'heart_disease' => null,
+                'heart_disease' => null,
+                'mental_illness' => null,
+                'cancer' => null,
+                'hypertension' => null,
+                'kidney_disease' => null,
+                'epilepsy' => null,
+                'others' => null
             ];
 
             $user_fd_details = (object)$user_fd_details;

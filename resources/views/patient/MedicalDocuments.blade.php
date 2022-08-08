@@ -27,8 +27,7 @@
                     </a>
                     <table id="datatable" class="table table-striped col-lg-12" style="width: 100%;">
                         <thead> 
-                            <tr>
-                                <th scope="col">ID</th>      
+                            <tr>    
                                 <th scope="col">Document</th>
                                 <th scope="col">Filename</th>
                                 <th scope="col">Date</th>
@@ -39,7 +38,6 @@
                         <tbody style = "width: 100%;">
                             @foreach($user_documents as $docs)
                                 <tr>
-                                    <td>{{ $docs->dt_id }}</td>
                                     <td>{{ $docs->document_type }}</td>
                                     <td>{{ $docs->filename }}</td>
                                     <td>{{ date_format(date_create($docs->date), 'M d, Y g:i a') }}</td>
@@ -52,9 +50,6 @@
                             @endforeach 
                         </tbody>
                     </table>
-
-
-                    </iframe>
                 </div>
             </div>
         </div>
