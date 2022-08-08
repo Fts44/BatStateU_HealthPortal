@@ -15,6 +15,7 @@ use App\Http\Controllers\Patient\FamilyDetailsController as PatientFamilyDetails
 use App\Http\Controllers\Patient\MedicalDocumentsController as PatientMedicalDocumentsController;
 
 use App\Http\Controllers\Admin\AdminPatientController as AdminPatientController;
+use App\Http\Controllers\Admin\AdminMedicineController as AdminMedicineController;
 
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
@@ -83,6 +84,21 @@ Route::prefix('admin')->group(function(){
         Route::get('',[AdminPatientController::class, 'index'])->name('AdminPersonnel');
 
     });
+
+    Route::prefix('inventory')->group(function(){
+        Route::get('medicine', [AdminMedicineController::class, 'index'])->name('AdminInventoryMedicine');
+
+        
+        Route::get('medicine/types', [AdminMedicineController::class, 'index_type'])->name('AdminInventoryMedicineTypes');
+        Route::post('medicine/types', [AdminMedicineController::class, 'create_type'])->name('AdminInventoryMedicineTypes');
+        Route::get('medicine/types/delete/{mt_id}', [AdminMedicineController::class, 'delete_type'])->name('AdminInventoryDeleteMedicineTypes');
+        Route::post('medicine/types/update/{mt_id}', [AdminMedicineController::class, 'update_type'])->name('AdminInventoryUpdateMedicineTypes');
+    
+        Route::get('medicine/category', [AdminMedicineController::class, 'index_category'])->name('AdminInventoryMedicineCategory');
+        Route::post('medicine/category', [AdminMedicineController::class, 'create_category'])->name('AdminInventoryMedicineCategory');
+        Route::get('medicine/category/delete/{mc_id}', [AdminMedicineController::class, 'delete_category'])->name('AdminInventoryDeleteMedicineCategory');
+        Route::post('medicine/category/update/{mc_id}', [AdminMedicineController::class, 'update_category'])->name('AdminInventoryUpdateMedicineCategory');
+    });
 });
 
 
@@ -91,6 +107,10 @@ Route::prefix('PopulateSelect')->group(function(){
     Route::get('Province',[PopulateSelect::class, 'province'])->name('PopulateProvince');
     Route::get('Municipality/{provCode}',[PopulateSelect::class, 'municipality'])->name('PopulateMunicipality');
     Route::get('Barangay/{citymunCode}',[PopulateSelect::class, 'barangay'])->name('PopulateBarangay');
-    Route::get('change',[PopulateSelect::class, 'change']);
 
+    Route::get('Department', [PopulateSelect::class, 'departments'])->name('PopulateDepartments');
+    Route::get('Program/{dept_id}', [PopulateSelect::class, 'programs'])->name('PopulatePrograms');
+
+    Route::get('MedicineTypes', [PopulateSelect::class, 'medicine_types'])->name('PopulateMedicineTypes');
+    Route::get('MedicineCategory', [PopulateSelect::class, 'medicine_category'])->name('PopulateMedicineCategory');
 });

@@ -43,4 +43,36 @@ class PopulateSelectController extends Controller
         }
         return $barangays;
     }
+
+    public function departments(){
+        $departments = DB::table('department')
+        ->orderBy('dept_code','ASC')
+        ->get();
+
+        return $departments;
+    }
+
+    public function programs($dept_id){
+        $programs = DB::table('program')
+        ->orderBy('prog_code','ASC')
+        ->where('dept_id', $dept_id)->get();
+
+        return $programs;
+    }
+
+    public function medicine_category(){
+        $medicine_category = DB::table('medicine_category')
+        ->orderBy('mc_name','ASC')
+        ->get();
+
+        return $medicine_category;
+    }
+
+    public function medicine_types(){
+        $medicine_types = DB::table('medicine_types')
+        ->orderBy('mt_name','ASC')
+        ->get();
+
+        return $medicine_types;
+    }
 }

@@ -12,6 +12,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('AdminInventoryMedicine') }}" id="sidebar_message">
+                    <i class="bi bi-capsule-pill"></i>
+                    <span>Medicine Inventory</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" id="sidebar_dashboard" data-bs-target="#user-nav" data-bs-toggle="collapse" >
                     <i class="bi bi-people"></i>
                     <span>User</span>

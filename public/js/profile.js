@@ -26,6 +26,10 @@ $('#emerg_mun').change(function(){
     set_barangay('#emerg_brgy', '', $('#emerg_mun').val());
 });
 
+$('#department').change(function(){
+    set_program('#program', '', $('#department').val());
+});
+
 $('#profile_pic').change(function(){
     let file = $("input[type=file]").get(0).files[0];
 

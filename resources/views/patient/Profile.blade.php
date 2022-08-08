@@ -390,7 +390,10 @@
                                             <label class="col-lg-12 col-form-label" for="department">Department:</label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="department" id="department">
-                                                    <option value="1">--- Choose department ---</option>
+                                                    <option value="">--- Choose department ---</option>
+                                                    @foreach($departments as $dept)
+                                                        <option value="{{ $dept->dept_id }}"  {{ (old('department', $user_details->dept_id)==$dept->dept_id) ? 'selected' : '' }}>{{ $dept->dept_code }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <span class="text-danger">
@@ -403,7 +406,10 @@
                                             <label class="col-lg-12 col-form-label" for="program">Program:</label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="program" id="program">
-                                                    <option value="1">--- Choose program ---</option>
+                                                    <option value="">--- Choose program ---</option>
+                                                    @foreach($programs as $prog)
+                                                        <option value="{{ $prog->prog_id }}"  {{ (old('program', $user_details->prog_id)==$prog->prog_id) ? 'selected' : '' }}>{{ $prog->prog_code }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <span class="text-danger">

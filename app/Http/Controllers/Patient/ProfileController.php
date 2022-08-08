@@ -37,7 +37,8 @@ class ProfileController extends Controller
         $ec_biz_add = DB::table('address')->where('add_id', $user_details->ec_biz_add_id)->first();
         
         $provinces = $this->PopulateSelect->province();//same all
-
+        $departments = $this->PopulateSelect->departments();
+        $programs = $this->PopulateSelect->programs($user_details->dept_id);
         //for home
         if(!$home_add){
             $home_municipalities = null;
@@ -87,7 +88,8 @@ class ProfileController extends Controller
             'dorm_add',
             'dorm_municipalities', 'dorm_barangays',
             'ec_biz_add',
-            'emerg_municipalities','emerg_barangays'
+            'emerg_municipalities','emerg_barangays',
+            'departments', 'programs'
         ));
     }
 

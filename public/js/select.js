@@ -49,3 +49,24 @@ function set_barangay(select_brgy, brgyCode, citymunCode){
         }
     });
 };
+
+function set_program(select_prog, prog_code, dept_id){
+    $(select_prog).empty();
+    clear_select(select_prog,'--- Choose Program ---');
+    $.ajax({
+        url: window.location.origin+"/PopulateSelect/Program/"+dept_id,
+        type: "GET",
+        success: function (response) {      
+            $.each( response, function( key, item ) {
+                $(select_prog).append($('<option>', { 
+                    value: item.prog_id,
+                    text : item.prog_code,
+                    selected: (item.prog_code==prog_code) ? true : false
+                }));
+            });
+        },
+        error: function(response) {
+            console.log(response);
+        }
+    });
+};
