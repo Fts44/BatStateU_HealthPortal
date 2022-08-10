@@ -5,7 +5,7 @@
         <li class="nav-item">
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('admin/dashboard') }}" id="sidebar_message">
+                <a class="nav-link collapsed" href="{{ route('AdminDashboard') }}" id="sidebar_message">
                     <i class="bi bi-columns-gap"></i>
                     <span>Dashboard</span>
                 </a>
@@ -15,6 +15,13 @@
                 <a class="nav-link collapsed" href="{{ route('AdminInventoryMedicine') }}" id="sidebar_message">
                     <i class="bi bi-capsule-pill"></i>
                     <span>Medicine Inventory</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('AdminPatientUploads') }}" id="sidebar_message">
+                    <i class="bi bi-filetype-doc"></i>
+                    <span>Patient Uploads</span>
                 </a>
             </li>
 

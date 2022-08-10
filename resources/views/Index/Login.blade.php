@@ -6,6 +6,7 @@
 
 @push('css')
     <link rel="stylesheet" href="{{ url('css/login.css') }}">
+
 @endpush
 
 @section('content')
@@ -47,7 +48,7 @@
 
                 <br>
                 
-                <button class="submit btn btn-secondary">Login</button>
+                <button id="btnProceed" class="submit btn btn-secondary">Login</button>
             </form>
 
             <p> Don't have an account? Sign Up <a href="registration">here</a> <p>
@@ -56,6 +57,9 @@
 @endsection
 
 @push('script')
+    <script src="{{ asset('js/recaptcha.js') }}"></script>
+    <!-- google recaptcha -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         $(document).ready(function(){
             $('.showpassword').click(function(){            

@@ -12,8 +12,8 @@
             <h1>Accounts</h1>
             <nav>
                 <ol class="breadcrumb" style="--bs-breadcrumb-divider: '|';">
-                    <li class="breadcrumb-item active">Patient</li>
-                    <li class="breadcrumb-item">Personnel</li>
+                    <li class="breadcrumb-item">Patient</li>
+                    <li class="breadcrumb-item active">Personnel</li>
                 </ol>
             </nav>
         </div>
@@ -48,10 +48,8 @@
                                 <th scope="col" class='d-none'>Contact</th>
                                 <th scope="col" class='d-none'>BusinessAddress</th>
 
-                                <th scope="col">Grade</th>
-                                <th scope="col">Dept</th>      
-                                <th scope="col">Prog</th>
                                 <th scope="col">Classification</th>
+                                <th scope="col">Position</th>
                                 <th scope="col">SRCode</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Contact</th>
@@ -81,10 +79,8 @@
                             <td class='d-none'>{{ $patient->ec_contact }}</td>
                             <td class='d-none'>{{ ($patient->ec_prov && $patient->ec_mun && $patient->ec_brgy) ? $patient->ec_brgy.', '.$patient->ec_mun.', '.$patient->ec_prov : '' }}</td>
 
-                            <td>{{ $patient->grade_level }}</td> 
-                            <td>{{ $patient->dept_code }}</td> 
-                            <td>{{ $patient->prog_code }}</td> 
                             <td>{{ ucwords($patient->classification) }}</td> 
+                            <td>{{ ucwords($patient->position) }}</td> 
                             <td>{{ $patient->sr_code }}</td> 
                             <td>{{ ucwords($patient->first_name." ".$patient->middle_name." ".$patient->last_name." ".$patient->suffix_name) }}</td> 
                             <td>{{ $patient->contact }}</td> 
@@ -107,7 +103,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal_title">Patient Details</h5>
+                    <h5 class="modal-title" id="modal_title">Personnel Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -128,7 +124,7 @@
                     </div>
 
                     <div class="form-control border-0">
-                        <label style="font-weight: 600;">Patient Name: </label> <input id="name" class="border-0" type="text"></input>
+                        <label style="font-weight: 600;">Personnel Name: </label> <input id="name" class="border-0" type="text"></input>
                     </div>
 
                     <div class="form-control border-0">

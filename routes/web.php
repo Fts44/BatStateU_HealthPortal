@@ -15,7 +15,9 @@ use App\Http\Controllers\Patient\FamilyDetailsController as PatientFamilyDetails
 use App\Http\Controllers\Patient\MedicalDocumentsController as PatientMedicalDocumentsController;
 
 use App\Http\Controllers\Admin\AdminPatientController as AdminPatientController;
+use App\Http\Controllers\Admin\AdminPersonnelController as AdminPersonnelController;
 use App\Http\Controllers\Admin\AdminMedicineController as AdminMedicineController;
+use App\Http\Controllers\Admin\AdminPatientUploads as AdminPatientUploads;
 
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
@@ -42,7 +44,8 @@ Route::middleware('IsLoggedIn')->group(function(){
 });
 
 Route::prefix('patient')->group(function(){
-   
+   Route::view('dashboard','patient.Dashboard')->name('PatientDashboard');
+
     Route::prefix('')->group(function(){
         Route::get('',[PatientProfileController::class, 'index'])->name('PatientProfile');
         Route::post('update/{id}',[PatientProfileController::class, 'update_profile'])->name('UpdatePatientProfile');
@@ -73,7 +76,8 @@ Route::prefix('patient')->group(function(){
 });
 
 Route::prefix('admin')->group(function(){
-
+    Route::view('dashboard','admin.AdminDashboard')->name('AdminDashboard');
+    Route::get('patientdocuments',[AdminPatientUploads::class, 'index'])->name('AdminPatientUploads');
     Route::prefix('')->group(function(){
         Route::get('',[AdminPatientController::class, 'index'])->name('AdminPatient');
         Route::get('patient/{id}',[AdminPatientController::class, 'show'])->name('ViewAdminPatientDetails');
@@ -81,14 +85,23 @@ Route::prefix('admin')->group(function(){
     });
 
     Route::prefix('personnel')->group(function(){
-        Route::get('',[AdminPatientController::class, 'index'])->name('AdminPersonnel');
+        Route::get('',[AdminPersonnelController::class, 'index'])->name('AdminPersonnel');
 
     });
 
     Route::prefix('inventory')->group(function(){
-        Route::get('medicine', [AdminMedicineController::class, 'index'])->name('AdminInventoryMedicine');
+        Route::get('medicine', [AdminMedicineController::class, 'index_summary'])->name('AdminInventoryMedicine');
 
-        
+        Route::get('medicine/product', [AdminMedicineController::class, 'index'])->name('AdminInventoryMedicineProduct');
+        Route::post('medicine/product', [AdminMedicineController::class, 'create'])->name('AdminInventoryMedicineProduct');
+        Route::get('medicine/product/delete/{im_id}', [AdminMedicineController::class, 'delete'])->name('AdminInventoryDeleteMedicineProduct');
+        Route::post('medicine/product/update/{im_id}', [AdminMedicineController::class, 'update'])->name('AdminInventoryUpdateMedicineProduct');
+
+        Route::get('medicine/info', [AdminMedicineController::class, 'index_info'])->name('AdminInventoryMedicineInfo');
+        Route::post('medicine/info', [AdminMedicineController::class, 'create_info'])->name('AdminInventoryMedicineInfo');
+        Route::get('medicine/info/delete/{mi_id}', [AdminMedicineController::class, 'delete_info'])->name('AdminInventoryDeleteMedicineInfo');
+        Route::post('medicine/info/update/{mi_id}', [AdminMedicineController::class, 'update_info'])->name('AdminInventoryUpdateMedicineInfo');
+
         Route::get('medicine/types', [AdminMedicineController::class, 'index_type'])->name('AdminInventoryMedicineTypes');
         Route::post('medicine/types', [AdminMedicineController::class, 'create_type'])->name('AdminInventoryMedicineTypes');
         Route::get('medicine/types/delete/{mt_id}', [AdminMedicineController::class, 'delete_type'])->name('AdminInventoryDeleteMedicineTypes');
@@ -113,4 +126,5 @@ Route::prefix('PopulateSelect')->group(function(){
 
     Route::get('MedicineTypes', [PopulateSelect::class, 'medicine_types'])->name('PopulateMedicineTypes');
     Route::get('MedicineCategory', [PopulateSelect::class, 'medicine_category'])->name('PopulateMedicineCategory');
+    Route::get('MedicineInfo', [PopulateSelect::class, 'medicine_info'])->name('PopulateMedicineInfo');
 });

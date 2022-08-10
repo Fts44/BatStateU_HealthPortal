@@ -6,7 +6,7 @@
     <li class="nav-item">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('patient/dashboard') }}" id="sidebar_message">
+            <a class="nav-link collapsed" href="{{ route('PatientDashboard') }}" id="sidebar_message">
                 <i class="bi bi-columns-gap"></i>
                 <span>Dashboard</span>
             </a>

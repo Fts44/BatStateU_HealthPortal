@@ -13,8 +13,10 @@
             <nav>
                 <ol class="breadcrumb" style="--bs-breadcrumb-divider: '|';">
                     <li class="breadcrumb-item active">Summary</li>
-                    <li class="breadcrumb-item "><a href="{{ route('AdminInventoryMedicineTypes') }}">Types </a> </li>
-                    <li class="breadcrumb-item ">Category</li>
+                    <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicineProduct') }}">Product</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicineInfo') }}">MedInfo</a></li>
+                    <li class="breadcrumb-item "><a href="{{ route('AdminInventoryMedicineTypes') }}">Types</a></li>
+                    <li class="breadcrumb-item "><a href="{{ route('AdminInventoryMedicineCategory') }}">Category</a></li>
                 </ol>
             </nav>
         </div>
@@ -29,16 +31,22 @@
                     <table id="datatable" class="table table-striped col-lg-12" style="width: 100%;">
                         <thead> 
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Product Name</th>      
                                 <th scope="col">Stock In</th>
                                 <th scope="col">Stock Out</th>
-                                <th scope="col">Expired</th>
-                                <th scope="col">Stock </th>
+                                <th scope="col">Available </th>
                             </tr>
                         </thead>
                         <tbody style = "width: 100%;">
-
+                        @php $i = 0 @endphp 
+                        @foreach($summary_medicine as $medicine)
+                        <tr>
+                            <td>{{ $medicine->mi_name }}</td>
+                            <td>{{ $medicine->TotalStockin }}</td>
+                            <td>{{ $medicine->TotalStockout }}</td>
+                            <td>{{ $medicine->TotalStockin-$medicine->TotalStockout }}</td>
+                        </tr>
+                        @endforeach 
                         </tbody>
                     </table>
                 </div>

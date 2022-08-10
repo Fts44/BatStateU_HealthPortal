@@ -13,6 +13,8 @@
             <nav>
                 <ol class="breadcrumb" style="--bs-breadcrumb-divider: '|';">
                     <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicine') }}">Summary</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicineProduct') }}">Product</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicineInfo') }}">MedInfo</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('AdminInventoryMedicineTypes') }}">Types </a> </li>
                     <li class="breadcrumb-item active">Category</li>
                 </ol>
@@ -61,7 +63,7 @@
                                     </a>
                                     
                                     <a class="btn btn-danger btn-sm" href="{{ route('AdminInventoryDeleteMedicineCategory', ['mc_id' => $category->mc_id ]) }}">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-eraser"></i>
                                     </a>
                                 </td>
                             </tr>

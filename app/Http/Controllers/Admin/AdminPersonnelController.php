@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
 
-class AdminPatientController extends Controller
+class AdminPersonnelController extends Controller
 {
     public function index(){
         $patients = DB::table('accounts AS acc')
@@ -47,11 +47,11 @@ class AdminPatientController extends Controller
 
         ->leftjoin('family_details as fd', 'acc.fd_id', 'fd.fd_id')
 
-        ->where('position','!=','admin')
-        ->where('position','=','patient')
+        ->where('position', '!=', 'patient')
+        ->where('position', '!=', 'admin')
         ->get();
 
-        return view('admin.AdminPatient', compact('patients'));
+        return view('admin.AdminPersonnel', compact('patients'));
     }
 
     public function show($acc_id){
@@ -94,6 +94,7 @@ class AdminPatientController extends Controller
         ->leftjoin('family_details as fd', 'acc.fd_id', 'fd.fd_id')
 
         ->where('position','!=','admin')
+        ->where('position', '=', 'infimary personnel')
         ->get();
         
         echo json_encode($acc_details, true);

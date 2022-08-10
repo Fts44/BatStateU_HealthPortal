@@ -75,4 +75,15 @@ class PopulateSelectController extends Controller
 
         return $medicine_types;
     }
+
+    public function medicine_info(){
+        $medicine_infos = DB::table('medicine_info as mi')
+        ->select('mi.*', 'mc.mc_name', 'mt.mt_name')
+        ->leftjoin('medicine_category as mc', 'mi.mc_id', 'mc.mc_id')
+        ->leftjoin('medicine_types as mt', 'mi.mt_id', 'mt.mt_id')
+        ->orderBy('mi.mi_name', 'ASC')
+        ->get();
+
+        return $medicine_infos;
+    }
 }
