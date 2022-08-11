@@ -18,7 +18,7 @@
 
                         <div class="row mb-3">
                             <div class="col-lg-12">
-                                <label class="col-lg-12 col-form-label">Father Name:</label>
+                                <label class="col-lg-12 col-form-label">Father Name <span class="text-danger field-required">*</span></label>
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="row">
@@ -57,7 +57,7 @@
 
                         <div class="row mb-3">
                             <div class="col-lg-6">
-                                <label class="col-lg-12 col-form-label">Father Occupation:</label>
+                                <label class="col-lg-12 col-form-label">Father Occupation <span class="text-danger field-required">*</span></label>
                                 <input type="text" class="form-control" name="father_occupation" value="{{ old('father_occupation',$user_fd_details->father_occupation) }}">
                                 <span class="text-danger">
                                     @error('father_occupation')
@@ -69,7 +69,7 @@
 
                         <div class="row mb-3">
                             <div class="col-lg-12">
-                                <label class="col-lg-12 col-form-label">Mother Name:</label>
+                                <label class="col-lg-12 col-form-label">Mother Name <span class="text-danger field-required">*</span></label>
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="row">
@@ -108,7 +108,7 @@
 
                         <div class="row mb-3">
                             <div class="col-lg-6">
-                                <label class="col-lg-12 col-form-label">Mother Occupation:</label>
+                                <label class="col-lg-12 col-form-label">Mother Occupation <span class="text-danger field-required">*</span></label>
                                 <input type="text" class="form-control" name="mother_occupation" value="{{ old('mother_occupation',$user_fd_details->mother_occupation) }}">
                                 <span class="text-danger">
                                     @error('mother_occupation')
@@ -118,7 +118,7 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <label class="col-lg-12 col-form-label">Present Marital Status:</label>
+                                <label class="col-lg-12 col-form-label">Present Marital Status <span class="text-danger field-required">*</span></label>
                                 <select class="form-select" name="marital_status">
                                     <option value="">--- Choose ---</option>
                                     <option value="married" {{ (old('marital_status',$user_fd_details->marital_status)=='married') ? 'selected' : '' }}>Married</option>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="row mb-3 mt-4">
-                            <label class="col-lg-12">Family illness history: (Check if any)</label>
+                            <label class="col-lg-12">Family illness history</label>
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-lg-3 mt-2">

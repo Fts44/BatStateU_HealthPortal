@@ -107,7 +107,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-lg-8">
-                                            <label class="col-lg-12 col-form-label" for="email">Personal Email</label>
+                                            <label class="col-lg-12 col-form-label" for="email">Personal Email <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <input name="email" id="email" type="text" class="form-control"  placeholder="abc@example.com" value="{{   old('email', $user_details->email) }}">
                                             </div>
@@ -119,7 +119,7 @@
                                         </div>   
                                         
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="sr_code">SR-Code:</label>
+                                            <label class="col-lg-12 col-form-label" for="sr_code">SR-Code <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <input name="sr_code" id="sr_code" type="text" class="form-control" placeholder="12-34567"  value="{{ old('sr_code', $user_details->sr_code) }}" >
                                             </div>
@@ -133,7 +133,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-lg-12">
-                                            <label class="col-lg-12 col-form-label">Name</label>
+                                            <label class="col-lg-12 col-form-label">Name <span class="text-danger field-required">*</span></label>
                                             <div class="row">
                                                 <div class="col-lg-10">
                                                     <div class="row">
@@ -174,7 +174,7 @@
                                     <div class="row mb-3">
                                         <div class="col-lg-4">
                                             <div class="col-lg-12">
-                                                <label for="" class="col-lg-12  col-form-label">Gender</label>
+                                                <label for="" class="col-lg-12  col-form-label">Gender <span class="text-danger field-required">*</span></label>
                                                 <div class="col-lg-12 mt-1 text-center">
                                                     <select class="form-select" name="gender" id="gender">
                                                         <option value="">--- Choose gender ---</option>
@@ -190,7 +190,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="civil_status">Civil Status:</label>
+                                            <label class="col-lg-12 col-form-label" for="civil_status">Civil Status <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="civil_status" id="civil_status">
                                                     <option value="">--- Choose status ---</option>
@@ -207,7 +207,7 @@
                                             </span>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="contact" class="col-lg-12 col-form-label">Contact Number</label>
+                                            <label for="contact" class="col-lg-12 col-form-label">Contact Number <span class="text-danger field-required">*</span></label>
                                             <input type="tel" class="form-control mt-1" name="contact" id="contact" value="{{ old('contact', $user_details->contact) }}" >
                                             <span class="text-danger">
                                                 @error('contact')
@@ -218,7 +218,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label class="col-lg-12 col-form-label" for="home_prov">Home Address</label>
+                                        <label class="col-lg-12 col-form-label" for="home_prov">Home Address <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-4 mt-1">
                                             <select class="form-select" name="home_prov" id="home_prov">
                                                 <option value="">--- Choose Province ---</option>
@@ -274,7 +274,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="religion">Religion:</label>
+                                            <label class="col-lg-12 col-form-label" for="religion">Religion <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <input type="text" class="form-control" name="religion" id="religion" value="{{ old('religion', $user_details->religion) }}">
                                             </div>
@@ -285,7 +285,7 @@
                                             </span> 
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="birthdate">Birthdate:</label>
+                                            <label class="col-lg-12 col-form-label" for="birthdate">Birthdate <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <input name="birthdate" id="birthdate" type="date" class="form-control" value="{{ old('birthdate', $user_details->birthdate) }}">
                                             </div>
@@ -296,7 +296,7 @@
                                             </span> 
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="classification">Classification:</label>
+                                            <label class="col-lg-12 col-form-label" for="classification">Classification <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="classification" id="classification">
                                                     <option value="">--- Choose classification ---</option>
@@ -314,7 +314,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label class="col-lg-12 col-form-label">Place of Birth</label>
+                                        <label class="col-lg-12 col-form-label">Place of Birth <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-4 mt-1">
                                             <select class="form-select" name="birth_prov" id="birth_prov">
                                                 <option value="">--- Choose Province ---</option>
@@ -370,7 +370,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="grade_level">Grade level:</label>
+                                            <label class="col-lg-12 col-form-label" for="grade_level">Grade level <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="grade_level" id="grade_level">
                                                     <option value="">--- Choose grade level ---</option>
@@ -387,7 +387,7 @@
                                             </span> 
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="department">Department:</label>
+                                            <label class="col-lg-12 col-form-label" for="department">Department <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="department" id="department">
                                                     <option value="">--- Choose department ---</option>
@@ -403,7 +403,7 @@
                                             </span> 
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label" for="program">Program:</label>
+                                            <label class="col-lg-12 col-form-label" for="program">Program <span class="text-danger field-required">*</span></label>
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="program" id="program">
                                                     <option value="">--- Choose program ---</option>
@@ -421,7 +421,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label class="col-lg-12 col-form-label">Dorm Address (If any)</label>
+                                        <label class="col-lg-12 col-form-label">Dorm Address</label>
                                         <div class="col-lg-4 mt-1">
                                             <select class="form-select" name="dorm_prov" id="dorm_prov">
                                                 <option value="">--- Choose Province ---</option>
@@ -487,7 +487,7 @@
                                     @csrf
 
                                     <div class="row mb-3">
-                                        <label class="col-lg-12 col-form-label" for="">Name</label>
+                                        <label class="col-lg-12 col-form-label" for="">Name <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-10">
                                             <div class="row">
                                                 <div class="col-lg-4 mt-1">
@@ -523,11 +523,11 @@
 
                                     <div class="row mb-3">
                                         <div class="col-lg-4">
-                                            <label for="emerg_landline" class="col-lg-12 col-form-label">Landline</label>
+                                            <label for="emerg_landline" class="col-lg-12 col-form-label">Landline </label>
                                             <input class="form-control mt-1" type="text" placeholder="" name="emerg_landline" id="emerg_landline" value="{{ old('emerg_landline',$user_details->ec_landline) }}">
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="emerg_contact" class="col-lg-12 col-form-label">Contact Number</label>
+                                            <label for="emerg_contact" class="col-lg-12 col-form-label">Contact Number <span class="text-danger field-required">*</span></label>
                                             <input class="form-control mt-1" type="tel"  placeholder="09123456789" name="emerg_contact" id="emerg_contact" value="{{ old('emerg_contact',$user_details->ec_contact) }}">
                                             <span class="text-danger">
                                                 @error('emerg_contact')
@@ -536,7 +536,7 @@
                                             </span>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="emerg_relation" class="col-lg-12 col-form-label">Relation to you</label>
+                                            <label for="emerg_relation" class="col-lg-12 col-form-label">Relation to you <span class="text-danger field-required">*</span></label>
                                             <input type="text" class="form-control mt-1" name="emerg_relation" id="emerg_relation" placeholder="" value="{{ old('emerg_relation',$user_details->ec_rtp) }}">
                                             <span class="text-danger">
                                                 @error('emerg_relation')
@@ -547,7 +547,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="" class="col-lg-12 col-form-label">Bussiness Address</label>
+                                        <label for="" class="col-lg-12 col-form-label">Bussiness Address <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-4">
                                             <select class="form-select mt-1" name="emerg_prov" id="emerg_prov">
                                                 <option value="">Choose Province</option>
@@ -618,7 +618,7 @@
                                     @csrf
 
                                     <div class="row mb-3">
-                                        <label for="new_pass" class="col-lg-12 col-form-label">New Password</label>
+                                        <label for="new_pass" class="col-lg-12 col-form-label">New Password <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-5 mt-1">  
                                             <input class="form-control" type="password" name="new_pass" id="new_pass" value="{{ old('new_pass') }}">
                                             <span class="text-danger">
@@ -630,7 +630,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="confirm_pass" class="col-lg-12 col-form-label">Confirm Password</label>
+                                        <label for="confirm_pass" class="col-lg-12 col-form-label">Confirm Password <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-5 mt-1">  
                                             <input class="form-control" type="password" name="confirm_pass" id="confirm_pass" value="{{ old('confirm_pass') }}">
                                             <span class="text-danger">
@@ -642,7 +642,7 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="old_pass" class="col-lg-12 col-form-label">Old Password</label>
+                                        <label for="old_pass" class="col-lg-12 col-form-label">Old Password <span class="text-danger field-required">*</span></label>
                                         <div class="col-lg-5 mt-1">  
                                             <input class="form-control" type="password" name="old_pass" id="old_pass" value="{{ old('old_pass') }}">
                                             <span class="text-danger">
@@ -713,6 +713,10 @@
         @if(old('emerg_mun'))
             set_barangay('#emerg_brgy','{{ old("emerg_brgy") }}', '{{ old("emerg_mun") }}');
         @endif
+    @endif
+
+    @if(old('department'))
+        set_program('#program', '{{ old("program") }}', '{{ old("department") }}')
     @endif
 
     $(document).ready(function(){

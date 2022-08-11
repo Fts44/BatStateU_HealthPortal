@@ -7,6 +7,13 @@ function clear_select(input, default_text){
 
 }
 
+function ucwords(str){
+	var result = str.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+    	return letter.toUpperCase();
+	});
+	return result;
+}
+
 function set_municipality(select_mun, citymunCode, provCode, select_brgy){
     $(select_mun).empty();
     clear_select(select_mun,'--- Choose Municipality ---');
@@ -70,3 +77,20 @@ function set_program(select_prog, prog_code, dept_id){
         }
     });
 };
+
+// function test(){
+//     var result;
+//     $.ajax({
+//         url: window.location.origin+"/PopulateSelect/Province",
+//         type: "GET",
+//         success: function (response) {      
+//             $.each( response, function( key, item ) {
+//                 result+="UPDATE `refprovince` SET `provDesc`='"+ucwords(item.provDesc)+"' WHERE `id` ='"+item.id+"';";
+//             });
+//             console.log(result);
+//         },
+//         error: function(response) {
+//             console.log(response);
+//         }
+//     });
+// };

@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <a href="#" class="logo d-flex align-items-center">
             <img src="{{ asset('image/logo.png') }}" alt="school_logo">
-            <span class="d-none d-lg-block ms-2">Health Services Portal</span>
+            <span class="d-none d-lg-block ms-1">Health Services Portal</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn" id="hamburgerMenu"></i>
     </div><!-- End Logo -->

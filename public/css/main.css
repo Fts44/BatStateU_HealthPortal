@@ -2,10 +2,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-*{
-    font-family: 'Montserrat', sans-serif;
- }
-
  :root {
    scroll-behavior: smooth;
  }
@@ -32,10 +28,9 @@
    white-space:nowrap;
  }
  
- /*h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+ h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
  }
- */
  /*--------------------------------------------------------------
  # Main
  --------------------------------------------------------------*/
@@ -57,7 +52,7 @@
    margin-bottom: 10px;
  }
  .pagetitle h1 {
-   font-size: 24px;
+   font-size: 20px;
    margin-bottom: 0;
    font-weight: 600;
    color: #012970;
@@ -227,11 +222,12 @@
  }
  
  .card-title {
+  font-family: "Montserrat", sans-serif;
    margin-top: 1.5rem;
    display: flex;
    justify-content: center;
-   font-size: 1.3rem;
-   font-weight: 700;
+   font-size: 19px;
+   font-weight: 600;
    color: #012970;
  }
  .card-title span {
@@ -295,9 +291,9 @@
  /* Breadcrumbs */
  .breadcrumb {
    font-size: 14px;
-   font-family: "Nunito", sans-serif;
+   font-family: "Montserrat", sans-serif;
    color: #899bbd;
-   font-weight: 600;
+   font-weight: 500;
  }
  .breadcrumb a {
    color: #899bbd;
@@ -340,7 +336,7 @@
  }
  @media (min-width: 1200px) {
    .logo {
-     width: 280px;
+     width: 235px;
    }
  }
  .logo img {
@@ -348,7 +344,7 @@
    margin-right: 6px;
  }
  .logo span {
-   font-size: 1.3rem;
+   font-size: 19px;
    font-weight: 600;
    color: #262626;
  }
@@ -554,7 +550,7 @@
    top: 60px;
    left: 0;
    bottom: 0;
-   width: 300px;
+   width: 260px;
    z-index: 996;
    transition: all 0.3s;
    padding: 20px;
@@ -566,7 +562,7 @@
  }
  @media (max-width: 1199px) {
    .sidebar {
-     left: -300px;
+     left: -260px;
    }
  }
  .sidebar::-webkit-scrollbar {
@@ -580,7 +576,7 @@
  
  @media (min-width: 1200px) {
    #main, #footer {
-     margin-left: 300px;
+     margin-left: 260px;
    }
  }
  @media (max-width: 1199px) {
@@ -593,7 +589,7 @@
      margin-left: 0;
    }
    .toggle-sidebar .sidebar {
-     left: -300px;
+     left: -260px;
    }
  }
  
@@ -629,7 +625,7 @@
    border-radius: 4px;
  }
  .sidebar-nav .nav-link i {
-   font-size: 16px;
+   font-size: 14px;
    margin-right: 10px;
    color: #4154f1;
  }
@@ -834,7 +830,16 @@
  .dashboard .recent-sales .dataTable-bottom {
    padding: 10px 0 0 0;
  }
- 
+
+ .dataTables_wrapper {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  }
+  .field-required{
+    font-size: 18px;
+    font-weight: 600;
+  }
+
  /* Top Selling */
  .dashboard .top-selling {
    font-size: 14px;
@@ -887,63 +892,6 @@
  }
  
  /*--------------------------------------------------------------
- # Profie Page
- --------------------------------------------------------------*/
- .profile .profile-card img {
-   max-width: 120px;
- }
- .profile .profile-card h2 {
-   font-size: 24px;
-   font-weight: 700;
-   color: #2c384e;
-   margin: 10px 0 0 0;
- }
- .profile .profile-card h3 {
-   font-size: 18px;
- }
- .profile .profile-card .social-links a {
-   font-size: 20px;
-   display: inline-block;
-   color: rgba(1, 41, 112, 0.5);
-   line-height: 0;
-   margin-right: 10px;
-   transition: 0.3s;
- }
- .profile .profile-card .social-links a:hover {
-   color: #012970;
- }
- .profile .profile-overview .row {
-   margin-bottom: 20px;
-   font-size: 15px;
- }
- .profile .profile-overview .card-title {
-   color: #012970;
- }
- .profile .profile-overview .label {
-   font-weight: 600;
-   color: rgba(1, 41, 112, 0.6);
- }
- .profile .profile-edit label {
-   font-weight: 600;
-   color: rgba(1, 41, 112, 0.6);
- }
- .profile .profile-edit img {
-   max-width: 120px;
- }
- 
- /*--------------------------------------------------------------
- # F.A.Q Page
- --------------------------------------------------------------*/
- .faq .basic h6 {
-   font-size: 18px;
-   font-weight: 600;
-   color: #4154f1;
- }
- .faq .basic p {
-   color: #6980aa;
- }
- 
- /*--------------------------------------------------------------
  # Contact
  --------------------------------------------------------------*/
  .contact .info-box {
@@ -955,9 +903,9 @@
    color: #4154f1;
  }
  .contact .info-box h3 {
-   font-size: 20px;
+   font-size: 18px;
    color: #012970;
-   font-weight: 700;
+   font-weight: 600;
    margin: 20px 0 10px 0;
  }
  .contact .info-box p {
@@ -1043,39 +991,6 @@
    }
    100% {
      transform: rotate(360deg);
-   }
- }
- 
- /*--------------------------------------------------------------
- # Error 404
- --------------------------------------------------------------*/
- .error-404 {
-   padding: 30px;
- }
- .error-404 h1 {
-   font-size: 180px;
-   font-weight: 700;
-   color: #4154f1;
-   margin-bottom: 0;
-   line-height: 150px;
- }
- .error-404 h2 {
-   font-size: 24px;
-   font-weight: 700;
-   color: #012970;
-   margin-bottom: 30px;
- }
- .error-404 .btn {
-   background: #51678f;
-   color: #fff;
-   padding: 8px 30px;
- }
- .error-404 .btn:hover {
-   background: #3e4f6f;
- }
- @media (min-width: 992px) {
-   .error-404 img {
-     max-width: 50%;
    }
  }
  

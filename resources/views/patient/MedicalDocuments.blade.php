@@ -21,7 +21,7 @@
         <div class="section" >
             <div class="card" id="cardTable">
                 <div class="card-body px-4">
-                    <h5 class="card-title">Your uploads</h5>
+                    <h5 class="card-title">Documents</h5>
                     <a href="#" class="btn btn-secondary btn-sm" id="add" style="float: right; margin-top: -2.5rem;"  data-bs-toggle="modal" data-bs-target="#modal">
                         <i class="bi bi-plus-lg"></i>          
                     </a>
@@ -67,7 +67,7 @@
                     <div class="modal-body mb-4">
                         <div class="row">
                             <div>
-                                <label for="" class="col-form-label col-lg-12">Document Type:</label>
+                                <label for="" class="col-form-label col-lg-12">Document Type <span class="text-danger field-required">*</span></label>
                                 <select class="form-select form-select" name="document_type" id="">
                                     <option value="">--- Choose document type ---</option>
                                     @foreach($document_type as $type)
@@ -84,7 +84,7 @@
 
                         <div class="row">
                             <div>
-                                <label for="" class="col-form-label col-lg-12 mt-4">Document:</label>
+                                <label for="" class="col-form-label col-lg-12 mt-4">Document <span class="text-danger field-required">*</span></label>
                                 <input class="form-control" type="file" name="file" id="file">
                             </div>
                             <span class="text-danger" id="file_error">
