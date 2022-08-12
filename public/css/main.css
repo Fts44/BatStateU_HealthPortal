@@ -5,10 +5,7 @@
  :root {
    scroll-behavior: smooth;
  }
-
- *{
-  font-size: 14px;
- }
+ 
  
  body {
    
@@ -58,7 +55,7 @@
    margin-bottom: 10px;
  }
  .pagetitle h1 {
-   font-size: 20px;
+   font-size: 22px;
    margin-bottom: 0;
    font-weight: 600;
    color: #012970;
@@ -238,7 +235,7 @@
  }
  .card-title span {
    color: #899bbd;
-   font-size: 12px;
+   font-size: 15px;
    font-weight: 400;
  }
  .card-body {
@@ -622,7 +619,7 @@
  .sidebar-nav .nav-link {
    display: flex;
    align-items: center;
-   font-size: 14px;
+   font-size: 15px;
    font-weight: 600;
    color: #4154f1;
    transition: 0.3;
@@ -631,7 +628,7 @@
    border-radius: 4px;
  }
  .sidebar-nav .nav-link i {
-   font-size: 14px;
+   font-size: 15px;
    margin-right: 10px;
    color: #4154f1;
  }
@@ -664,7 +661,7 @@
  .sidebar-nav .nav-content a {
    display: flex;
    align-items: center;
-   font-size: 14px;
+   font-size: 15px;
    font-weight: 600;
    color: #012970;
    transition: 0.3;
@@ -698,7 +695,7 @@
    padding-right: 20px;
    padding-bottom: 5px;
    transition: 0.3s;
-   font-size: 16px;
+   font-size: 15px;
  }
  .dashboard .filter .icon:hover, .dashboard .filter .icon:focus {
    color: #4154f1;
@@ -839,7 +836,7 @@
 
  .dataTables_wrapper {
   font-family: "Nunito", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   }
   th{
     font-weight: 600;
