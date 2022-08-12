@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailerController as MailerController;
 use App\Http\Controllers\OTPController as OTPController;
 use App\Http\Controllers\PopulateSelectController as PopulateSelect;
+use App\Http\Controllers\test as test;
+use App\Http\Controllers\CreatePDFController as CreatePDFController;
 
 use App\Http\Controllers\Index\LoginController as Login;
 use App\Http\Controllers\Index\RegistrationController as Registration;
@@ -22,7 +24,7 @@ use App\Http\Controllers\Admin\AdminPatientUploads as AdminPatientUploads;
 Route::post('SendOTP',[OTPController::class, 'compose_mail'])->name('SendOTP');
 Route::get('logout',[Login::class, 'logout'])->name('Logout');
 
-
+Route::get('/test', [CreatePDFController::class, 'index']);
 Route::middleware('IsLoggedIn')->group(function(){
     
     Route::prefix('')->group(function(){

@@ -7,6 +7,7 @@
  }
  
  body {
+  
    background: #f6f9ff;
    color: #444444;
  }
@@ -35,6 +36,7 @@
  # Main
  --------------------------------------------------------------*/
  #main {
+  font-family:'Montserrat', sans-serif;
    margin-top: 60px;
    padding: 20px 30px;
    transition: all 0.3s;
@@ -833,10 +835,17 @@
 
  .dataTables_wrapper {
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   }
+  th{
+    font-weight: 600;
+}
   .field-required{
     font-size: 18px;
+    font-weight: 600;
+  }
+
+  .label-profile {
     font-weight: 600;
   }
 

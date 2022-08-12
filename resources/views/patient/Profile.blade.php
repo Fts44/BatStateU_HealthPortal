@@ -374,10 +374,9 @@
                                             <div class="col-lg-12 mt-1">
                                                 <select class="form-select" name="grade_level" id="grade_level">
                                                     <option value="">--- Choose grade level ---</option>
-                                                    <option value="Elementary" {{ (old('grade_level', $user_details->grade_level)=='Elementary') ? 'selected' : '' }}>Elementary</option>
-                                                    <option value="Junior High School" {{ (old('grade_level', $user_details->grade_level)=='Junior High School') ? 'selected' : '' }}>Junior High School</option>
-                                                    <option value="Senior High School" {{ (old('grade_level', $user_details->grade_level)=='Senior High School') ? 'selected' : '' }}>Senior High School</option>
-                                                    <option value="College" {{ (old('grade_level', $user_details->grade_level)=='College') ? 'selected' : '' }}>College</option>
+                                                    @foreach($grade_levels as $grade_level)
+                                                        <option value="{{ $grade_level->gl_id }}" {{ (old('grade_level', $user_details->gl_id)==$grade_level->gl_id) ? 'selected' : '' }}>{{ $grade_level->gl_name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <span class="text-danger">

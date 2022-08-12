@@ -81,7 +81,7 @@
                             <td class='d-none'>{{ $patient->ec_contact }}</td>
                             <td class='d-none'>{{ ($patient->ec_prov && $patient->ec_mun && $patient->ec_brgy) ? $patient->ec_brgy.', '.$patient->ec_mun.', '.$patient->ec_prov : '' }}</td>
 
-                            <td>{{ $patient->grade_level }}</td> 
+                            <td>{{ $patient->gl_name }}</td> 
                             <td>{{ $patient->dept_code }}</td> 
                             <td>{{ $patient->prog_code }}</td> 
                             <td>{{ ucwords($patient->classification) }}</td> 
@@ -91,7 +91,6 @@
                             <td>
                                 <a class="btn btn-primary btn-sm" id="view_details" data-bs-toggle="modal" data-bs-target="#modal">
                                     <i class="bi bi-eye"></i>
-                                    View
                                 </a>
                             </td> 
                         </tr>
@@ -122,6 +121,21 @@
                     </div>
 
                     <input class="d-none" id="acc_id" type="text" value="">
+
+                    <div class="form-control border-0">
+                        <label style="font-weight: 600;">Action: </label> 
+                        <label>
+                            <a class="btn btn-secondary btn-sm" id="upload_documents" title="Upload documents">
+                                <i class="bi bi-file-earmark-arrow-up"></i>
+                            </a>
+                            <a class="btn btn-secondary btn-sm" id="create_documents"  title="Create documents">
+                                <i class="bi bi-clipboard2-plus"></i>
+                            </a>
+                            <a class="btn btn-secondary btn-sm" id="view_documents"  title="View documents">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </a>
+                        </label>
+                    </div>
 
                     <div class="form-control border-0">
                         <label style="font-weight: 600;">SR Code: </label> <label id="sr_code"></label>
@@ -228,24 +242,20 @@
             @endphp
             swal('{{$status->title}}','{{$status->message}}','{{$status->icon}}');
         @endif
-
-
         $(document).ready(function(){
-            $("#verified").tooltip();  
+            $("#verified").tooltip(); 
+            $("#upload_documents").tooltip();  
+            $("#create_documents").tooltip(); 
+            $("#view_documents").tooltip(); 
             
             var table = $('#datatable').DataTable();
-
             table.on('click', '#view_details', function(){
-
                 $tr = $(this).closest('tr');
                 if($($tr).hasClass('child')){
                     $tr = $tr.prev('.parent');
                 }
-
                 var data = table.row($tr).data();
-
                 console.log(data);
-
                 $('#verified').html(data[9]=="1" ? "<button id='vstatus' value='1' class='border-0 badge bg-success'>Verified</button>" : "<button id='update_vstatus' value='2' class='border-0 badge bg-danger'>Not Verified</button>");
                 $('#img').attr('src', data[8]);
                 $('#acc_id').val(data[0]);
@@ -272,7 +282,6 @@
                 $('#ec_add').html(data[18]);
                 $('#account_created').html(data[10]);
             });
-
             $('#verified').click(function(){
                 swal({
                     title: "Are you sure?",

@@ -19,7 +19,7 @@ class FamilyDetailsController extends Controller
             ->where('fd_id', $user_fd_id)
             ->first();
 
-        //  echo json_encode($user_fd_details);
+        // echo json_encode($user_fd_details);
 
         if(!$user_fd_details){
             
@@ -37,7 +37,6 @@ class FamilyDetailsController extends Controller
                 'marital_status' => null,
                 'diabetes' => null,
                 'heart_disease' => null,
-                'heart_disease' => null,
                 'mental_illness' => null,
                 'cancer' => null,
                 'hypertension' => null,
@@ -46,7 +45,7 @@ class FamilyDetailsController extends Controller
                 'others' => null
             ];
 
-            $user_fd_details = (object)$user_fd_details;
+            // $user_fd_details = (object)$user_fd_details;
         }
 
         return view('patient.FamilyDetails', compact('user_fd_details'));

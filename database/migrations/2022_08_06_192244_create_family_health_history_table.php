@@ -16,11 +16,11 @@ class CreateFamilyHealthHistoryTable extends Migration
         Schema::create('family_health_history', function (Blueprint $table) {
             $table->id('fhh_id');
             $table->boolean('diabetes')->default(0);
-            $table->boolean('heart_diesease')->default(0);
+            $table->boolean('heart_disease')->default(0);
             $table->boolean('mental_illness')->default(0);
             $table->boolean('cancer')->default(0);
             $table->boolean('hypertension')->default(0);
-            $table->boolean('kidney_diesease')->default(0);
+            $table->boolean('kidney_disease')->default(0);
             $table->boolean('epilepsy')->default(0);
             $table->string('others')->nullable();
         });

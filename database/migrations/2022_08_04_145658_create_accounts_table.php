@@ -33,7 +33,7 @@ class CreateAccountsTable extends Migration
             $table->string('password', 100);
             $table->boolean('is_verified')->default(0);
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->string('grade_level')->nullable();
+            $table->integer('gl_id')->nullable();
             $table->integer('dept_id')->nullable();
             $table->integer('prog_id')->nullable();
             $table->integer('home_address_id')->nullable();

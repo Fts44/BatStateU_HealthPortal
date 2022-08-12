@@ -93,6 +93,7 @@ class ProfileController extends Controller
         ));
     }
 
+
     public function update_profile(Request $request, $id){
 
         Session()->put('active_page', 'profile');//set active page
@@ -275,7 +276,7 @@ class ProfileController extends Controller
                         'birth_address_id' => $user_details->birth_address_id,
                         'dorm_address_id' => $user_details->dorm_address_id,
                         'classification' => $request->classification,
-                        'grade_level' => $request->grade_level,
+                        'gl_id' => $request->grade_level,
                         'dept_id' => $request->department,
                         'prog_id' => $request->program,
                     ]);

@@ -28,7 +28,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" id="sidebar_dashboard" data-bs-target="#user-nav" data-bs-toggle="collapse" >
                     <i class="bi bi-people"></i>
-                    <span>User</span>
+                    <span>Accounts</span>
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="user-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">

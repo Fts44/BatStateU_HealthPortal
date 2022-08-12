@@ -44,6 +44,13 @@ class PopulateSelectController extends Controller
         return $barangays;
     }
 
+    public function grade_levels(){
+        $grade_levels = DB::table('grade_level')
+        ->get();
+
+        return $grade_levels;
+    }
+
     public function departments(){
         $departments = DB::table('department')
         ->orderBy('dept_code','ASC')

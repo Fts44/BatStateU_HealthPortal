@@ -10,7 +10,7 @@ class AdminPatientController extends Controller
 {
     public function index(){
         $patients = DB::table('accounts AS acc')
-        ->select('acc.*', 'dept.*', 'prog.*', 
+        ->select('acc.*', 'dept.*', 'prog.*', 'gl.*',
         'hadd_rp.provDesc as home_prov', 'hadd_rcm.citymunDesc as home_mun', 'hadd_rb.brgyDesc as home_brgy',
         'badd_rp.provDesc as birth_prov', 'badd_rcm.citymunDesc as birth_mun', 'badd_rb.brgyDesc as birth_brgy',
         'badd_rp.provDesc as dorm_prov', 'dadd_rcm.citymunDesc as dorm_mun', 'dadd_rb.brgyDesc as dorm_brgy',
@@ -21,6 +21,7 @@ class AdminPatientController extends Controller
         'fd.mother_fn as fd_mfn', 'fd.mother_mn as fd_mmn', 'fd.mother_sn as fd_msn', 'fd.mother_occupation as fd_mo',
         'fd.marital_status as fd_ms'
         )
+        ->leftjoin('grade_level as gl', 'acc.gl_id', 'gl.gl_id')
         ->leftjoin('department as dept', 'acc.dept_id', 'dept.dept_id')
         ->leftjoin('program as prog', 'acc.prog_id', 'prog.prog_id')
 
@@ -56,7 +57,7 @@ class AdminPatientController extends Controller
 
     public function show($acc_id){
         $acc_details = DB::table('accounts AS acc')
-        ->select('acc.*', 'dept.*', 'prog.*', 
+        ->select('acc.*', 'dept.*', 'prog.*', 'gl.*',
         'hadd_rp.provDesc as home_prov', 'hadd_rcm.citymunDesc as home_mun', 'hadd_rb.brgyDesc as home_brgy',
         'badd_rp.provDesc as birth_prov', 'badd_rcm.citymunDesc as birth_mun', 'badd_rb.brgyDesc as birth_brgy',
         'badd_rp.provDesc as dorm_prov', 'dadd_rcm.citymunDesc as dorm_mun', 'dadd_rb.brgyDesc as dorm_brgy',
@@ -67,6 +68,7 @@ class AdminPatientController extends Controller
         'fd.mother_fn as fd_mfn', 'fd.mother_mn as fd_mmn', 'fd.mother_sn as fd_msn', 'fd.mother_occupation as fd_mo',
         'fd.marital_status as fd_ms'
         )
+        ->leftjoin('grade_level as gl', 'acc.gl_id', 'gl.gl_id')
         ->leftjoin('department as dept', 'acc.dept_id', 'dept.dept_id')
         ->leftjoin('program as prog', 'acc.prog_id', 'prog.prog_id')
 
